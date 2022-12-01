@@ -1,5 +1,8 @@
 import run from "aocrunner"
 
+import fs from 'fs';
+const testInput = fs.readFileSync("./src/day01/testInput.txt")
+
 const parseInput = (rawInput) => rawInput
 
 const part1 = (rawInput) => {
@@ -21,6 +24,10 @@ run({
       //   input: ``,
       //   expected: "",
       // },
+      {
+        input: testInput,
+        expected: ''
+      }
     ],
     solution: part1,
   },
@@ -34,5 +41,5 @@ run({
     solution: part2,
   },
   trimTestInputs: true,
-  onlyTests: false,
+  onlyTests: true,
 })
