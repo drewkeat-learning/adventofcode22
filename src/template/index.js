@@ -1,21 +1,21 @@
-import run from "aocrunner"
+import run from "aocrunner";
 
-import fs from 'fs';
-const testInput = fs.readFileSync("./src/day01/testInput.txt")
+import fs from "fs";
+const testInput = fs.readFileSync("./src/day01/testInput.txt").toString();
 
-const parseInput = (rawInput) => rawInput
+const parseInput = (rawInput) => rawInput;
 
 const part1 = (rawInput) => {
-  const input = parseInput(rawInput)
+  const input = parseInput(rawInput);
 
-  return
-}
+  return;
+};
 
 const part2 = (rawInput) => {
-  const input = parseInput(rawInput)
+  const input = parseInput(rawInput);
 
-  return
-}
+  return;
+};
 
 run({
   part1: {
@@ -26,8 +26,8 @@ run({
       // },
       {
         input: testInput,
-        expected: ''
-      }
+        expected: "",
+      },
     ],
     solution: part1,
   },
@@ -42,4 +42,4 @@ run({
   },
   trimTestInputs: true,
   onlyTests: true,
-})
+});

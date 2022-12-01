@@ -1,42 +1,47 @@
-import run from "aocrunner"
+import run from "aocrunner";
+import fs from "fs";
+const testInput = fs.readFileSync("./src/day01/testInput.txt").toString();
 
-const testInput = `1000
-2000
-3000
+// const testInput = `1000
+// 2000
+// 3000
 
-4000
+// 4000
 
-5000
-6000
+// 5000
+// 6000
 
-7000
-8000
-9000
+// 7000
+// 8000
+// 9000
 
-10000`
-
+// 10000`
 
 const parseInput = (rawInput) => {
-  return rawInput.split("\n\n").map(group => group.split("\n"))
-}
+  return rawInput.split("\n\n").map((group) => group.split("\n"));
+};
 
 const part1 = (rawInput) => {
-  const input = parseInput(rawInput)  
-  const groupWeights = input.map(group =>{
-    return group.reduce((sum, num)=> sum+=Number(num),0)
-    })
+  const input = parseInput(rawInput);
+  const groupWeights = input.map((group) => {
+    return group.reduce((sum, num) => (sum += Number(num)), 0);
+  });
 
-  return Math.max(...groupWeights).toString()
-}
+  return Math.max(...groupWeights).toString();
+};
 
 const part2 = (rawInput) => {
-  const input = parseInput(rawInput)
-  const groupWeights = input.map(group =>{
-  return group.reduce((sum, num)=> sum+=Number(num),0)
-  })
+  const input = parseInput(rawInput);
+  const groupWeights = input.map((group) => {
+    return group.reduce((sum, num) => (sum += Number(num)), 0);
+  });
 
-  return groupWeights.sort((a, b)=>a-b).slice(-3).reduce((sum,num)=> sum+=num,0).toString()
-}
+  return groupWeights
+    .sort((a, b) => a - b)
+    .slice(-3)
+    .reduce((sum, num) => (sum += num), 0)
+    .toString();
+};
 
 run({
   part1: {
@@ -47,8 +52,8 @@ run({
       // },
       {
         input: testInput,
-        expected: '24000'
-      }
+        expected: "24000",
+      },
     ],
     solution: part1,
   },
@@ -60,11 +65,11 @@ run({
       // },
       {
         input: testInput,
-        expected: '45000'
-      }
+        expected: "45000",
+      },
     ],
     solution: part2,
   },
   trimTestInputs: true,
-  onlyTests: false,
-})
+  onlyTests: true,
+});
