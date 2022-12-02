@@ -1,7 +1,7 @@
 import run from "aocrunner";
 
 import fs from "fs";
-const testInput = fs.readFileSync("./src/day01/testInput.txt").toString();
+const testInput = fs.readFileSync("./src/day02/testInput.txt").toString();
 
 const parseInput = (rawInput) => rawInput;
 
